@@ -4,6 +4,6 @@ import Icon from './icon';
 
 
 ReactDOM.render(
-    <Icon name="123"></Icon>,
-    document.body
+    <Icon name='add-outline'></Icon>,
+    document.querySelector('#root')
 );
