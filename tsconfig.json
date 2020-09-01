@@ -21,7 +21,14 @@
     "esModuleInterop": true,
     "noUnusedLocals": true
   },
-  "include": [],
+  "include": [
+    "example.tsx",
+    "lib/**/*",
+    "include/**/*",
+    "examples/**/*",
+    "types/**/*",
+    "test/**/*",
+  ],
   "exclude": [
     "node_modules",
     "build",
