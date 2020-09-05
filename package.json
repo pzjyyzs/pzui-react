@@ -1,6 +1,6 @@
 {
   "name": "pzui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index",
@@ -20,6 +20,7 @@
   "bugs": {
     "url": "https://github.com/pzjyyzs/pzui-react/issues"
   },
+  "files": ["/dist"],
   "homepage": "https://github.com/pzjyyzs/pzui-react#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.11.0",
