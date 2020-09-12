@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactElement } from 'react';
 import './dialog.scss';
 import Icon from '../icon/icon';
 import { scopeClassMaker } from '../classes';
 
 interface Props {
     visible: boolean;
+    buttons: Array<ReactElement>
 }
 
 const scopedClass = scopeClassMaker('fui-dialog');
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
+    
     return (
         props.visible ?
         <Fragment>
@@ -25,8 +27,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                     {props.children}
                 </main>
                 <footer className={scopedClass('footer')}>
-                    <button>ok</button>
-                    <button>cancel</button>
+                   {props.buttons}
                 </footer>
             </div>
         </Fragment> :
