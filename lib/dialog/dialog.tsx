@@ -1,4 +1,4 @@
-import React, { Fragment, ReactElement, ReactFragment, ReactNode } from 'react';
+import React, { Fragment, ReactElement, ReactNode } from 'react';
 import './dialog.scss';
 import Icon from '../icon/icon';
 import { scopeClassMaker } from '../classes';
@@ -11,7 +11,7 @@ interface Props {
     closeOnClickMask?: boolean;
 }
 
-const scopedClass = scopeClassMaker('fui-dialog');
+const scopedClass = scopeClassMaker('pzui-dialog');
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
     const onClickClose: React.MouseEventHandler = (e) => {
