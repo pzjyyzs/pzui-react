@@ -5,6 +5,7 @@ import { scopeClassMaker } from '../classes';
 import ReactDOM from 'react-dom';
 
 interface Props {
+    title?: string;
     visible: boolean;
     buttons?: Array<ReactElement>;
     onClose: React.MouseEventHandler;
@@ -31,7 +32,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                 <Icon name='close-outline'></Icon>
             </div>
             <header className={scopedClass('header')}>
-                提示
+                {props.title}
             </header>
             <main className={scopedClass('main')}>
                 {props.children}
@@ -50,7 +51,8 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 }
 
 Dialog.defaultProps = {
-    closeOnClickMask: false
+    closeOnClickMask: true,
+    title: '提示'
 }
 
 const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?:() => void) => {
