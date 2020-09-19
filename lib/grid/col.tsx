@@ -19,6 +19,4 @@ const Col: React.FunctionComponent <ColProps>= (props) => {
     )
 }
 
-Col.defaultProps = {
-}
 export default Col;
