@@ -5,12 +5,23 @@ import Row from './row';
 
 const GridExample:React.FunctionComponent = () => {
     return (
-      <Grid>
-          <Row>
-              <Col>
-              123</Col>
-          </Row>
-      </Grid>
+        <React.Fragment>
+            <Grid>
+                <Row>
+                    <Col>
+                        123
+                    </Col>
+                </Row>
+            </Grid>
+            <Grid>
+                <Row>
+                    <Col size="6">
+                        col-6
+                    </Col>
+                    <Col size="6">col-6</Col>
+                </Row>
+            </Grid>
+        </React.Fragment>
     )
 }
 

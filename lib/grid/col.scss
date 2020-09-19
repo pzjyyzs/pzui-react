@@ -1,0 +1,38 @@
+@import '../style/layout.scss';
+
+@mixin media-screen($key, $value) {
+    $col-layout-initial: $--x-col-layout;
+    @while $col-layout-initial>0 {
+      $col-percentage: 100% * $col-layout-initial / $--x-col-layout;
+      @media only screen and #{inspect($value)} {
+        &-#{$key}-#{$col-layout-initial} {
+          width: $col-percentage;
+        }
+      }
+      $col-layout-initial: $col-layout-initial - 1;
+    }
+  }
+  
+.pzui-col {
+    position: relative;
+    float: left;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    $col-layout-initial: 12;
+    $--x-col-layout: 12;
+    @while $col-layout-initial>0 {
+        $col-percentage: 100% * $col-layout-initial / $--x-col-layout;
+        &-#{$col-layout-initial} {
+            width: $col-percentage;
+        }
+        &-offset-#{$col-layout-initial} {
+            margin-left: $col-percentage;
+        }
+        $col-layout-initial: $col-layout-initial - 1;
+    }
+    @each $key, $value in $--x-size-range {
+        @include media-screen($key, $value);
+      }
+}
+
