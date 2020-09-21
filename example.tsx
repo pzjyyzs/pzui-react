@@ -4,6 +4,7 @@ import {HashRouter as Router, Route,Link} from 'react-router-dom';
 import IconExample from './lib/icon/icon.example';
 import DialogExample from './lib/dialog/dialog.example';
 import GridExample from './lib/grid/grid.example';
+import FormExample from 'lib/form/form.example';
 
 ReactDOM.render((
     <Router>
@@ -26,12 +27,16 @@ ReactDOM.render((
                         <li>
                             <Link to="/grid">布局</Link>
                         </li>
+                        <li>
+                            <Link to="/form">表单</Link>
+                        </li>
                     </ul>
                 </aside>
                 <main>
                     <Route path="/icon" component={IconExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/grid" component={GridExample}></Route>
+                    <Route path='/form' component={FormExample}></Route>
                 </main>
             </div>
         </div>
