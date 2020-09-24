@@ -1,4 +1,7 @@
 import React, { ReactFragment } from 'react';
+import classes from '../helpers/classes';
+import Input from '../input/input';
+import './form.scss';
 
 export interface FormValue {
     [K: string]: any
@@ -23,17 +26,24 @@ const Form: React.FunctionComponent<FormProps> = (props) => {
     }
     return (
         <form onSubmit={onSubmit}>
-            {props.fields.map(f => {
-                <div key={f.name}>
-                    { f.label }
-                    <input type={f.input.type } value={formData[f.name]}
-                            onChange={(e) => onInputChange(f.name, e.target.value)} />
-                <div>{props.errors[f.name]}</div>
+            <table>
+                {props.fields.map(f => 
+                    <tr  className={classes('pzui-form-row')} key={f.name}>
+                        <td className="pzui-form-td">{ f.label }</td>
+                        <td className="pzui-form-td">
+                            <Input 
+                                className="pzui-form-input"
+                                type={f.input.type } 
+                                value={formData[f.name]}
+                                onChange={(e) => onInputChange(f.name, e.target.value)} />
+                            <div>{props.errors[f.name]}</div>
+                        </td>
+                    </tr>
+                )}
+                <div>
+                    {props.buttons}
                 </div>
-            })}
-            <div>
-                {props.buttons}
-            </div>
+            </table>
         </form>
     )
 }

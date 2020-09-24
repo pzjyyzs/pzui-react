@@ -6,7 +6,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
     name: string;
 }
  
-const Icon: React.SFC<IconProps> = ({ className, name, ...restProps}) => {
+const Icon: React.FunctionComponent<IconProps> = ({ className, name, ...restProps}) => {
     return (
        <svg className={classes('pzui-icon', className)} {...restProps}>
            <use xlinkHref={`#${name}`}></use>

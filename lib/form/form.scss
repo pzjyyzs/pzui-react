@@ -1,0 +1,20 @@
+.pzui-form {
+    &-tr:first-child {
+        .pzui-form-td {
+            padding-top: 0;
+        }
+    }
+    &-tr:last-child {
+        .pzui-form-td {
+            padding-bottom: 0;
+        }
+    }
+    &-td {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    &-td + &-td {
+        padding-left: 8px
+    }
+
+}
