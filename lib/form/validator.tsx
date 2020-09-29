@@ -5,6 +5,10 @@ interface FormRule {
     minLength?: number;
     maxLength?: number;
     pattern?: RegExp;
+    validator?: {
+        name: string;
+        validator: Promise<void>
+    }
 }
 
 interface FormErrors {
@@ -26,6 +30,9 @@ const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
     }
     rules.map(rule => {
         const value = formValue[rule.key];
+        if (rule.validator) {
+            rule.validator.validator(value)
+        }
         if (rule.required) {
             if (value === undefined && value === null || value === '') {
                 addErrors(rule.key, '必填')
