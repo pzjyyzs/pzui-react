@@ -27,6 +27,7 @@ const Form: React.FunctionComponent<FormProps> = (props) => {
     return (
         <form onSubmit={onSubmit}>
             <table className="pzui-form-table">
+                <tbody>
                 {props.fields.map(f => 
                     <tr  className='pzui-form-tr' key={f.name}>
                         <td className="pzui-form-td">
@@ -54,6 +55,7 @@ const Form: React.FunctionComponent<FormProps> = (props) => {
                     {props.buttons}
                     </td>
                 </tr>
+                </tbody>
             </table>
         </form>
     )

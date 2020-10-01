@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import Form, { FormValue } from './form';
-import Validator from './validator';
+import Validator, { noError } from './validator';
 
 const userName = ['jack']
 const checkUserName = (username: string, succeed: () => void, fail: ()=>void ) => {
@@ -31,7 +31,7 @@ const FormExample:React.FunctionComponent = () => {
             {key: 'username', validator: {
                 name: 'unique',
                 validate: (username: string) => {
-                    return new Promise((resolve, reject) =>{
+                    return new Promise<void>((resolve, reject) =>{
                         checkUserName(username, resolve, reject)
                     })
                 }
@@ -40,10 +40,12 @@ const FormExample:React.FunctionComponent = () => {
             {key: 'password', required: true},
             
         ]
-        const erros = Validator(formData, rules);
-        setErrors(erros)
-        console.log(formData)
-        console.log(erros)
+        Validator(formData, rules, (errors) => {
+            setErrors(errors);
+            if (noError(errors)) {
+                
+            }
+        });
     }
     return (
         <Form value={formData} fields={fields} 
