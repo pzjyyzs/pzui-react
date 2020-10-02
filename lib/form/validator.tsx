@@ -22,12 +22,12 @@ export function noError(errors: any) {
 type OneError =  string | Promise<string>;
 
 const Validator = (formValue: FormValue, rules: FormRules, callback: (errors: any) =>void, ): void => {
-    let errors: any = { }
+    let errors: {[key:string]: OneError[]} = { }
     const addErrors = (key: string, error: OneError) => {
-        if (errors === undefined) {
+        if (errors[key] === undefined) {
             errors[key] = [];
         }
-        errors.push(error);
+        errors[key].push(error);
     }
     rules.map(rule => {
         const value = formValue[rule.key];
@@ -53,26 +53,29 @@ const Validator = (formValue: FormValue, rules: FormRules, callback: (errors: an
     })
 
     const keyAndPromise = Object.keys(errors).map(key => 
-        errors[key].map((promise: any) => [key, promise])
+        errors[key].map<[string, OneError]>(error => [key, error])
     )
     const flattenErrors = flat(keyAndPromise);
     const promiseArray = flattenErrors.map(([key, promiseOrString]) => 
     (promiseOrString instanceof Promise ? promiseOrString: Promise.reject(promiseOrString))
-    .then(() =>  [key, undefined], (reason) => [key, reason]))
-    Promise.all(promiseArray).then((results: Array<[string, string]>) => {
-        callback(zip(results.filter(item => item[1])))
+    .then<[string, undefined], [string, string]>(() =>  [key, undefined], (reason) => [key, reason]))
+    Promise.all(promiseArray).then(results => {
+        callback(zip(results.filter(hasError)))
     })
 }
 
 export default Validator;
 
-function flat(array: Array<any>) {
-    const result = [];
+function hasError(item: [string, undefined] | [string, string]): item is [string, string] {
+    return typeof item[1] === 'string';
+}
+function flat<T>(array: Array<T | T[]>) {
+    const result: T[] = [];
     for(let i = 0;i< array.length;i++) {
         if (array[i] instanceof Array) {
-            result.push(...array[i])
+            result.push(...array[i] as T[])
         } else {
-            result.push(array[i])
+            result.push(array[i] as T)
         }
     }
     return result;
@@ -87,7 +90,7 @@ function fromEntries(array: Array<[string, string[]]>) {
 }
 
 function zip(kvList: Array<[string, string]>) {
-    const result:{[K: string]: Array<string>} = {};
+    const result:{[K: string]: string[]} = {};
     kvList.map(([key, value]) => {
         result[key] =  result[key] || [];
         result[key].push(value);
