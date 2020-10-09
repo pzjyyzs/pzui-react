@@ -4,7 +4,8 @@ import {HashRouter as Router, Route,Link} from 'react-router-dom';
 import IconExample from './lib/icon/icon.example';
 import DialogExample from './lib/dialog/dialog.example';
 import GridExample from './lib/grid/grid.example';
-import FormExample from 'lib/form/form.example';
+import FormExample from './lib/form/form.example';
+import LayoutExample from './lib/layout/layout.example';
 
 ReactDOM.render((
     <Router>
@@ -25,10 +26,13 @@ ReactDOM.render((
                             <Link to="/dialog">对话框</Link>
                         </li>
                         <li>
-                            <Link to="/grid">布局</Link>
+                            <Link to="/grid">栅格</Link>
                         </li>
                         <li>
                             <Link to="/form">表单</Link>
+                        </li>
+                        <li>
+                            <Link to="/layout">布局</Link>
                         </li>
                     </ul>
                 </aside>
@@ -37,6 +41,7 @@ ReactDOM.render((
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/grid" component={GridExample}></Route>
                     <Route path='/form' component={FormExample}></Route>
+                    <Route path='/layout' component={LayoutExample}></Route>
                 </main>
             </div>
         </div>

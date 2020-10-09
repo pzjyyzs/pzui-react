@@ -1,5 +1,4 @@
 import React, { ReactFragment } from 'react';
-import classes from '../helpers/classes';
 import Input from '../input/input';
 import './form.scss';
 
