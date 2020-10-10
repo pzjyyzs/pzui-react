@@ -1,5 +1,5 @@
+import { scopeClassMaker } from '../helpers/classes';
 import * as React from 'react';
-import { scopeClassMaker } from './../classes';
 
 const sc = scopeClassMaker('pzui-layout');
 

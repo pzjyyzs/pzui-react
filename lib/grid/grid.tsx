@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { scopeClassMaker } from './../classes';
+import { scopeClassMaker } from '../helpers/classes';
 
 const scopedClass = scopeClassMaker('pzui-grid');
 
@@ -9,7 +9,7 @@ export interface GridProps {
  
 const Grid: React.FunctionComponent <GridProps> = (props) => {
     return (
-       <div className={scopedClass()}>
+       <div className={scopedClass('')}>
            {props.children}
        </div>
       );

@@ -1,7 +1,7 @@
 import React, { Fragment, ReactElement, ReactNode } from 'react';
 import './dialog.scss';
 import Icon from '../icon/icon';
-import { scopeClassMaker } from '../classes';
+import { scopeClassMaker } from '../helpers/classes';
 import ReactDOM from 'react-dom';
 
 interface Props {
@@ -27,7 +27,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     const result = props.visible ?
     <Fragment>
         <div className={scopedClass('mask')} onClick={onClickMask}></div>
-        <div className={scopedClass()}>
+        <div className={scopedClass('')}>
             <div className={scopedClass('close')} onClick={onClickClose}>
                 <Icon name='close-outline'></Icon>
             </div>
