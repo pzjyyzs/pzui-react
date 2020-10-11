@@ -1,18 +1,17 @@
 .pzui-layout {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
-    &.hasAside {
-        flex-direction: row;
-        .pzui-layout  {
-            flex-direction: column;
-        }
-    }
     &-content {
         flex-grow: 1;
     }
     & & {
         flex-grow: 1;
         flex-direction: row;
+    }
+    &-hasAside {
+        flex-direction: row;
+        .pzui-layout  {
+            flex-direction: column;
+        }
     }
 }

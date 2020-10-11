@@ -2,9 +2,14 @@ import { scopeClassMaker } from '../helpers/classes';
 import * as React from 'react';
 
 const sc = scopeClassMaker('pzui-layout')
-const Content:React.FunctionComponent = () => {
+
+interface contentProps extends React.HTMLAttributes<HTMLElement> {
+
+}
+const Content:React.FunctionComponent<contentProps> = (props) => {
+    const { className, ...rest } = props;
     return (
-        <div className={sc('content')}>content</div>
+        <div className={sc('content', { extra: className})} {...rest}>{props.children}</div>
     )
 }
 
