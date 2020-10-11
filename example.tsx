@@ -6,17 +6,19 @@ import DialogExample from './lib/dialog/dialog.example';
 import GridExample from './lib/grid/grid.example';
 import FormExample from './lib/form/form.example';
 import LayoutExample from './lib/layout/layout.example';
+import {Layout, Header, Aside, Content, Footer} from './lib/layout/layout';
+import ' ./example.scss';
 
 ReactDOM.render((
     <Router>
-        <div>
-            <header>
+        <Layout className="page">
+            <Header>
                 <div className="logo">
                     PZUI
                 </div>
-            </header>
-            <div>
-                <aside>
+            </Header>
+            <Layout>
+                <Aside>
                     <h2>组件</h2>
                     <ul>
                         <li>
@@ -35,15 +37,16 @@ ReactDOM.render((
                             <Link to="/layout">布局</Link>
                         </li>
                     </ul>
-                </aside>
-                <main>
+                </Aside>
+                <Content>
                     <Route path="/icon" component={IconExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/grid" component={GridExample}></Route>
                     <Route path='/form' component={FormExample}></Route>
                     <Route path='/layout' component={LayoutExample}></Route>
-                </main>
-            </div>
-        </div>
+                </Content>
+            </Layout>
+            <Footer></Footer>
+        </Layout>
     </Router>
 ), document.querySelector('#root'))
