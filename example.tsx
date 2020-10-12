@@ -7,13 +7,15 @@ import GridExample from './lib/grid/grid.example';
 import FormExample from './lib/form/form.example';
 import LayoutExample from './lib/layout/layout.example';
 import {Layout, Header, Aside, Content, Footer} from './lib/layout/layout';
-import ' ./example.scss';
+import './example.scss';
+const logo =  require('./logo.png');
 
 ReactDOM.render((
     <Router>
         <Layout className="page">
             <Header>
                 <div className="logo">
+                    <img src={logo.default} width='100' height='48' alt=""/>
                     PZUI
                 </div>
             </Header>

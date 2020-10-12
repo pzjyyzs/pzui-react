@@ -15,9 +15,9 @@ const Layout:React.FunctionComponent<LayoutProps> = (props) => {
           children.reduce((result, node) => {
                 return result || node.type === Aside;
             }, false)
-    
+   // console.log(sc({'': true, hasAside}, { extra: className }))
     return (
-        <div className={sc({'': true, hasAside}, { extra: className})} { ...rest}>
+        <div className={sc({'': true, hasAside}, { extra: className })} { ...rest}>
             {props.children}
         </div>
     )
