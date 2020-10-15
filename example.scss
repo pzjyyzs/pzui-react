@@ -40,12 +40,19 @@ $main-color: #00ADb5;
         font-size: 18px;
     }
     ul {
-        padding: 0 $padding;
         min-width: 12em;
         > li {
-            padding: 8px 0;
             a {
-                color: $main-color;
+                display: block;
+                color: #333;
+                padding: 8px $padding;
+                &:hover {
+                    color: $main-color;
+                }
+                &:active {
+                    color: #fff;
+                    background-color: $main-color;
+                }
             }
         }
     }
