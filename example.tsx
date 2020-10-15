@@ -12,15 +12,15 @@ const logo =  require('./logo.png');
 
 ReactDOM.render((
     <Router>
-        <Layout className="page">
-            <Header>
-                <div className="logo">
+        <Layout className="site-page">
+            <Header className='site-header'>
+                <div className="site-logo">
                     <img src={logo.default} width='100' height='48' alt=""/>
-                    PZUI
+                    <span>PZUI</span>
                 </div>
             </Header>
             <Layout>
-                <Aside>
+                <Aside className='site-aside'>
                     <h2>组件</h2>
                     <ul>
                         <li>
@@ -40,7 +40,7 @@ ReactDOM.render((
                         </li>
                     </ul>
                 </Aside>
-                <Content>
+                <Content className='site-main'>
                     <Route path="/icon" component={IconExample}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/grid" component={GridExample}></Route>
@@ -48,7 +48,7 @@ ReactDOM.render((
                     <Route path='/layout' component={LayoutExample}></Route>
                 </Content>
             </Layout>
-            <Footer></Footer>
+            <Footer className='site-footer'></Footer>
         </Layout>
     </Router>
 ), document.querySelector('#root'))
