@@ -1,0 +1,20 @@
+@import '../style/flex.scss';
+
+.pzui-row {
+    display: block;
+    position: relative;
+    height: auto;
+    &:before,
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+    @include flex();
+
+    & > .pzui-col {
+        padding: 1rem;
+        text-align: center;
+        border-radius: .125rem;
+    }
+}
