@@ -8,13 +8,15 @@
 ul, ol{list-style: none;}
 h1, h2, h3, h4, h5 ,h6 { font-weight: normal;}
 a { text-decoration: none; color: inherit;}
-
+pre{font-family: "Fira Code Medium", Consolas, monospace;}
 $padding: 16px;
 $main-color: #00ADb5;
 .page {
     background-color: #fff;
 }
-
+.site-page {
+    min-height: 100vh;
+}
 .site-header {
     background: #eeeeee;
     padding: 8px 0;
