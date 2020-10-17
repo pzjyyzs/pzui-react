@@ -27,7 +27,8 @@
     "include/**/*",
     "examples/**/*",
     "types/**/*",
-    "test/**/*",
+    "test/**/*", 
+    "demo.tsx",
   ],
   "exclude": [
     "node_modules",

@@ -1,8 +1,13 @@
 import React from 'react';
 
+const x = require('!!raw-loader!./icon.example.tsx');
 const IconExample:React.FunctionComponent = () => {
     return (
-    <div>h1</div>
+    <div>
+        <pre>
+            {x.default}
+        </pre>
+    </div>
     )
 }
 
