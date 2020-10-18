@@ -1,18 +1,23 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import classes from '../helpers/classes';
+import React, { HTMLAttributes } from 'react';
+import { scopeClassMaker } from '../helpers/classes';
 import './button.scss';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+const sc = scopeClassMaker('pzui-button');
 
+interface ButtonProps extends HTMLAttributes<HTMLElement> {
+    type?: string;
 }
 
 const Button:React.FunctionComponent<ButtonProps> = (props) => {
-    const { className, children, ...rest} = props;
+    const { className, children,  type, ...rest} = props;
     return (
-        <button className={classes('pzui-button', className)} {...rest} >
+        <div className={sc('',{extra: `${className} pzui-button-${type}`})} {...rest}>
             {children}
-        </button>
+        </div>
     )
 }
 
+Button.defaultProps = {
+    type: 'initial'
+}
 export default Button;

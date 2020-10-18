@@ -8,6 +8,7 @@ import LayoutExample from './lib/layout/layout.example';
 import {Layout, Header, Aside, Content, Footer} from './lib/layout/layout';
 import './example.scss';
 import IconDemo from './lib/icon/icon.demo';
+import ButtonExample from './lib/button/button.example';
 const logo =  require('./logo.png');
 
 ReactDOM.render((
@@ -23,6 +24,9 @@ ReactDOM.render((
                 <Aside className='site-aside'>
                     <h2>组件</h2>
                     <ul>
+                        <li>
+                            <NavLink to="/button">按钮</NavLink>
+                        </li>
                         <li>
                             <NavLink to="/icon">Icon</NavLink>
                         </li>
@@ -41,6 +45,7 @@ ReactDOM.render((
                     </ul>
                 </Aside>
                 <Content className='site-main'>
+                    <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
                     <Route path="/grid" component={GridExample}></Route>
