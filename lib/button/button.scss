@@ -1,0 +1,34 @@
+@import '../style/mixins/reset.scss';
+
+.pzui-button {
+    display: inline-flex;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+    background-clip: border-box;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    margin: 0;
+    border: 1px solid ;
+    border-radius: 2px;
+    transition: all 2s ease-in-out;
+
+    &-initial {
+        color: rgb(51, 51,51);
+        background-color: rgb(241,241,241);
+        border-color: #ddd;
+        box-shadow: rgba(0,0,0,0) transparent;
+    }
+
+    &-success {
+        color: rgb(255,255,255);
+        background-color:  rgb(103,194,58);
+        border-color:   rgb(103,194,58);
+        box-shadow:  rgba(0,0,0,0) transparent;
+    }
+}

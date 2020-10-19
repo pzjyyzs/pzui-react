@@ -1,0 +1,7 @@
+.row {
+    .pzui-button {
+        &:not(:first-child) {
+            margin-left: 16px;
+        }
+    }
+}

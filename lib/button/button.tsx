@@ -11,7 +11,7 @@ interface ButtonProps extends HTMLAttributes<HTMLElement> {
 const Button:React.FunctionComponent<ButtonProps> = (props) => {
     const { className, children,  type, ...rest} = props;
     return (
-        <div className={sc('',{extra: `${className} pzui-button-${type}`})} {...rest}>
+        <div className={sc('',{extra: `pzui-button-${type}`})} {...rest}>
             {children}
         </div>
     )
