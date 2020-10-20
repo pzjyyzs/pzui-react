@@ -6,18 +6,21 @@ const sc = scopeClassMaker('pzui-button');
 
 interface ButtonProps extends HTMLAttributes<HTMLElement> {
     type?: string;
+    disabled?: boolean;
 }
 
 const Button:React.FunctionComponent<ButtonProps> = (props) => {
-    const { className, children,  type, ...rest} = props;
+    const { className, children,  type, disabled, ...rest} = props;
+    const cssDisabled = disabled ? 'pzui-button-disabled' : '';
     return (
-        <div className={sc('',{extra: `pzui-button-${type}`})} {...rest}>
+        <div className={sc('',{extra: `${cssDisabled} pzui-button-${type}`})} {...rest}>
             {children}
         </div>
     )
 }
 
 Button.defaultProps = {
-    type: 'initial'
+    type: 'initial',
+    disabled: false
 }
 export default Button;
