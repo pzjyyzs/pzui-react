@@ -22,6 +22,10 @@
         transform: translate(1px, 1px);
     }
 
+    &:focus {
+        outline: none;
+    }
+
     &-initial {
         color: #333333;
         background-color: #f1f1f1;
@@ -31,6 +35,7 @@
             color: #1976d2;
             background-color: #f1f1f1;
             border-color: #1976d2;
+            outline: none;
         }
         &.pzui-button-disabled {
             color: #858585;
@@ -58,6 +63,20 @@
             background-color:#1976d2;
             border-color: #1976d2;
         }
+        &.pzui-button-disabled {
+            color: #75ade4;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: #e8f1fb;
+            border-color: #d1e4f6;
+            &:active,
+            &:focus,
+            &:hover {
+                color:#75ade4;
+                background-color: #e8f1fb;
+                border-color:#d1e4f6;
+            }
+        }
     }
 
     &-success {
@@ -69,6 +88,20 @@
             color: #fff;
             background-color: #67c23a;
             border-color:  #67c23a;
+        }
+        &.pzui-button-disabled {
+            color: #a4da89;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: #f0f9eb;
+            border-color: #e1f3d8;
+            &:active,
+            &:focus,
+            &:hover {
+                color:#a4da89;
+                background-color: #f0f9eb;
+                border-color:#e1f3d8;
+            }
         }
     }
 
@@ -82,6 +115,20 @@
             background-color: #e6a23c;
             border-color:  #e6a23c;
         }
+        &.pzui-button-disabled {
+            color: #f0c78a;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: #fdf6ec;
+            border-color: #faecd8;
+            &:active,
+            &:focus,
+            &:hover {
+                color:#f0c78a;
+                background-color: #fdf6ec;
+                border-color:#faecd8;
+            }
+        }
     }
 
     &-danger {
@@ -94,6 +141,21 @@
             background-color: #f56c6c;
             border-color:  #f56c6c;
         }
+
+        &.pzui-button-disabled {
+            color: #f9a7a7;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: #fef0f0;
+            border-color: #fde2e2;
+            &:active,
+            &:focus,
+            &:hover {
+                color:#f9a7a7;
+                background-color: #fef0f0;
+                border-color:#fde2e2;
+            }
+        }
     }
 
     &-info {
@@ -105,6 +167,20 @@
             color: #fff;
             background-color: #909399;
             border-color:  #909399;
+        }
+        &.pzui-button-disabled {
+            color: #bcbec2;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: #f4f4f5;
+            border-color: #e9e9eb;
+            &:active,
+            &:focus,
+            &:hover {
+                color:#bcbec2;
+                background-color: #f4f4f5;
+                border-color:#e9e9eb;
+            }
         }
     }
 }
