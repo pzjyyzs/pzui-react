@@ -1,6 +1,6 @@
 import React, { Fragment, ReactElement, ReactNode } from 'react';
 import './dialog.scss';
-import Icon from '../icon/icon';
+/* import Icon from '../icon/icon'; */
 import { scopeClassMaker } from '../helpers/classes';
 import ReactDOM from 'react-dom';
 
@@ -29,7 +29,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         <div className={scopedClass('mask')} onClick={onClickMask}></div>
         <div className={scopedClass('')}>
             <div className={scopedClass('close')} onClick={onClickClose}>
-                <Icon name='close-outline'></Icon>
+               {/*  <Icon name='close-outline'></Icon> */}
             </div>
             <header className={scopedClass('header')}>
                 {props.title}

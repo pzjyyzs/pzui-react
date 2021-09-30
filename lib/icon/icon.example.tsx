@@ -1,11 +1,13 @@
-import Icon  from './icon';
 import React from 'react';
+import ArrowDown from './icons/arrow-down';
+import Arrowup from './icons/arrow-up';
 
 
 const IconExample:React.FunctionComponent = () => {
     return (
     <div>
-        <Icon name='add-outline'></Icon>
+        <ArrowDown></ArrowDown>
+        <Arrowup></Arrowup>
     </div>
     )
 }

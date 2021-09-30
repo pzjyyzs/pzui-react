@@ -1,17 +1,22 @@
 import * as React from 'react';
-import './importIcons.js';
-import './icon.scss';
-import classes from '../helpers/classes'
-interface IconProps extends React.SVGAttributes<SVGElement> {
-    name: string;
-}
+import styled from 'styled-components';
+import { IconProps } from './types';
  
-const Icon: React.FunctionComponent<IconProps> = ({ className, name, ...restProps}) => {
+const Icon: React.FunctionComponent<IconProps> = ({ children, size = '16px', color = '#000', title, ...restProps}) => {
+    let $size: string = typeof size === 'number' ? `${size}px` : size;
+    
+    const Svg = styled.svg`display: inline-block;
+        fill: ${ color };
+        color: ${ color };
+        height: ${ $size };
+        width: ${ $size };
+    `;
     return (
-       <svg className={classes('pzui-icon', className)} {...restProps}>
-           <use xlinkHref={`#${name}`}></use>
-       </svg>
-      );
+        <Svg viewBox="0 0 24 24" data-baseweb="icon" { ...restProps }>
+            { title ? <title>{ title }</title> : null}
+            { children }
+        </Svg>
+    );
 }
  
 

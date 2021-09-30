@@ -1,9 +1,7 @@
 
-function classes(...names: (string | undefined)[]) {
+export default function classes(...names: (string | undefined)[]) {
     return names.filter(Boolean).join(' ');
 }
-
-export default classes;
 
 interface Option {
     extra: string | undefined;
