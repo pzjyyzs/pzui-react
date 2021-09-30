@@ -9,6 +9,7 @@ import {Layout, Header, Aside, Content, Footer} from './lib/layout/layout';
 import './example.scss';
 import IconDemo from './lib/icon/icon.demo';
 import ButtonExample from './lib/button/button.example';
+import modalExample from './lib/modal/modal.example';
 const logo =  require('./logo.png');
 
 ReactDOM.render((
@@ -42,6 +43,9 @@ ReactDOM.render((
                         <li>
                             <NavLink to="/layout">布局</NavLink>
                         </li>
+                        <li>
+                            <NavLink to='/modal'>模态框</NavLink>
+                        </li>
                     </ul>
                 </Aside>
                 <Content className='site-main'>
@@ -51,6 +55,7 @@ ReactDOM.render((
                     <Route path="/grid" component={GridExample}></Route>
                     <Route path='/form' component={FormExample}></Route>
                     <Route path='/layout' component={LayoutExample}></Route>
+                    <Route path='/modal' component={modalExample}></Route>
                 </Content>
             </Layout>
             <Footer className='site-footer'></Footer>
