@@ -12,6 +12,7 @@ import ButtonExample from './lib/button/button.example';
 import modalExample from './lib/modal/modal.example';
 import { GlobalStyle, IndexBody, Header, HeaderLogo, HeaderButton, HeaderIcon, HeaderIconBtn, Container, Nav, Main, NavA, NavDiv, NavLink } from './style-component';
 import GithubLogo from './lib/icon/icons/github';
+import CheckBoxExample from './lib/checkbox/checkbox.example';
 const logo =  require('./pz-logos.jpeg');
 
 ReactDOM.render((
@@ -70,6 +71,9 @@ ReactDOM.render((
                                 <li>
                                     <NavLink to='/modal'>模态框</NavLink>
                                 </li>
+                                <li>
+                                    <NavLink to='/checkbox'>多选按钮</NavLink>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -83,6 +87,7 @@ ReactDOM.render((
                     <Route path='/form' component={FormExample}></Route>
                     <Route path='/layout' component={LayoutExample}></Route>
                     <Route path='/modal' component={modalExample}></Route>
+                    <Route path='/checkbox' component={CheckBoxExample}></Route>
                 </Main>
             </Container>
         </IndexBody>

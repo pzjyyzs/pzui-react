@@ -104,6 +104,7 @@ export const Main = styled.main`
     display: block;
     position: relative;
     padding: 0 24px;
+    padding-top: 20px;
     color: #000;
     outline: none;
     width: 100%;
@@ -130,6 +131,7 @@ export const NavDiv = styled.div`
 `;
 
 export const NavLink = styled(MyNavLink)`
+    display: block;
     padding: 6px 12px 6px 72px;
     border-left: 4px solid transparent;
     line-height: 24px;

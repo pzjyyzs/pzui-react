@@ -1,27 +1,35 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import { scopeClassMaker } from '../helpers/classes';
-import './button.scss';
-
-const sc = scopeClassMaker('pzui-button');
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    color?: string;
-    disabled?: boolean;
-}
+import React from 'react';
+import { BaseBtn } from './style.component';
+import { BtnColor, BtnShapre, BtnSize, ButtonProps } from './types';
 
 const Button:React.FunctionComponent<ButtonProps> = (props) => {
-    const { className, children,  color, disabled, ...rest} = props;
-    const cssDisabled = disabled ? 'pzui-button-disabled' : '';
-    const classAll =className ? className : '';
-    return (
+    const { children, kind, size, shape, disabled,isLoading, isSelected, ...rest} = props;
+   /*  return (
         <button className={sc('',{extra: `${cssDisabled} pzui-button-${color} ${classAll}`})} {...rest}>
             {children}
         </button>
+    ) */
+    return (
+        <BaseBtn 
+            kind={kind} 
+            size={size} 
+            shape={shape} 
+            disabled={disabled} 
+            isLoading={isLoading} 
+            isSelected={isSelected}
+            { ...rest }
+        >
+            { children }
+        </BaseBtn>
     )
 }
 
 Button.defaultProps = {
-    color: 'initial',
-    disabled: false
+    kind: BtnColor.primary,
+    size: BtnSize.default,
+    shape: BtnShapre.default,
+    disabled: false,
+    isLoading: false,
+    isSelected: false
 }
 export default Button;
