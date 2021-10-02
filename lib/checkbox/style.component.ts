@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CheckboxProps, CheckMarkType, LabelPlace } from "./types";
+import { CheckboxProps, LabelPlace } from "./types";
 
 export const Root = styled.label`
     display: flex;
@@ -8,16 +8,11 @@ export const Root = styled.label`
     align-items: ${ (props: CheckboxProps) => (props.labelPlace === LabelPlace.top || 
         props.labelPlace === LabelPlace.bottom) ? 'center' : 'flex-start'};
     cursor: ${ (props: CheckboxProps) => props.disabled ? 'not-allowed' : 'pointer' };
-    user-select: 'none';
+    user-select: none;
 `;
 
 export const Checkmark = styled.span<CheckboxProps>(props => {
-    const { disabled, isChecked } = props;
-    const indeterminate = encodeURIComponent(`
-        <svg width="14" height="4" viewBox="0 0 14 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 0.5H0V3.5H14V0.5Z" fill="#fff"/>
-        </svg>
-    `);
+    const { isChecked } = props;
 
     const check = encodeURIComponent(`
         <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,6 +65,21 @@ export const Input = styled.input`
     overflow: hidden;
     opacity: 0;
 `;
+
+export const Label =  styled.label<CheckboxProps>(props => {
+    const { labelPlace, disabled } = props;
+    console.log(labelPlace)
+    const paddingDirection = {  [LabelPlace.top]: 'Bottom', [LabelPlace.bottom]: 'Top', [LabelPlace.left]: 'Right', [LabelPlace.right]: 'Left'};
+    const color = disabled ? '#545454' : '#000';
+    return {
+        verticalAlign: 'middle',
+        lineHeight: '24px',
+        [`padding${paddingDirection[labelPlace!]}`]: '8px',
+        color: color,
+        fontSize: '16px',
+        fontWeight: 500,
+    }
+});
 const getBackgroundColor = (props: CheckboxProps) => {
     const { disabled, isChecked } = props;
     if (disabled) {

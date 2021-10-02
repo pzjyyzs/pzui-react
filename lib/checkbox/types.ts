@@ -3,6 +3,7 @@ export interface CheckboxProps {
     checkmarkType?: CheckMarkType;
     disabled?: boolean;
     isChecked?: boolean;
+    onChange?: React.ChangeEventHandler;
 }
 
 export enum LabelPlace {
