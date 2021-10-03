@@ -1,14 +1,14 @@
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 
-export interface RadioGroupProps {
+export interface RadioGroupProps extends InputHTMLAttributes<HTMLInputElement> {
     align?:  'vertical' | 'horizontal';
     disabled?: boolean;
     value?: string;
-    onChange?: (e: React.MouseEvent<HTMLInputElement>) => void;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
     labelPlacement?: 'top' | 'right' | 'bottom' | 'left';
 }
 
-export interface RadioProps  {
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement>  {
     checked?: boolean;
     align?: 'vertical' | 'horizontal';
     disabled?: boolean;

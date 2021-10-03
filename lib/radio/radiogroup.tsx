@@ -5,7 +5,7 @@ import { RadioGroupProps } from './types';
 const RadioGroup: React.FunctionComponent<RadioGroupProps> = (props) => {
     const { align, disabled, children, value, onChange, ...rest } = props;
 
-    const handleChange = (e: React.MouseEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (onChange) {
             onChange(e);
         }

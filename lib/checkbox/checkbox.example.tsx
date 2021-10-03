@@ -5,8 +5,8 @@ import Checkbox from './checkbox';
 const CheckBoxExample:React.FunctionComponent = () => {
     const [checked, setChecked] = useState(false);
 
-    const handleChange: React.ChangeEventHandler = (e) => {
-        setChecked((e.target as HTMLInputElement).checked)
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setChecked(e.target.checked)
     }
 
     return (
