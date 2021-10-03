@@ -1,6 +1,6 @@
 import React from 'react';
 import { Checkmark, Input, Label, Root } from './style.component';
-import { CheckboxProps, CheckMarkType, LabelPlace } from './types';
+import { CheckboxProps } from './types';
 
 const Checkbox: React.FunctionComponent<CheckboxProps> = (props) => {
     const { labelPlace, checkmarkType, disabled, isChecked, children } = props;
@@ -22,7 +22,7 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = (props) => {
     );
     return (
         <Root>
-            { (labelPlace === LabelPlace.top || labelPlace === LabelPlace.left ) && labelComp}
+            { (labelPlace === 'top' || labelPlace === 'left' ) && labelComp}
             <Checkmark {...sharedProps} />
             <Input 
                 checked={isChecked} 
@@ -31,14 +31,14 @@ const Checkbox: React.FunctionComponent<CheckboxProps> = (props) => {
                 onClick={ (e) => {e.stopPropagation() }}
                 type='checkbox'
             ></Input>
-             { (labelPlace === LabelPlace.bottom || labelPlace === LabelPlace.right ) && labelComp}
+             { (labelPlace === 'bottom' || labelPlace === 'right' ) && labelComp}
         </Root>
     )
 }
 
 Checkbox.defaultProps = {
-    labelPlace: LabelPlace.right,
-    checkmarkType: CheckMarkType.default,
+    labelPlace: 'right',
+    checkmarkType: 'default',
     disabled: false,
     isChecked: false,
     onChange: (e)=> {}

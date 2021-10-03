@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import DialogExample from './lib/dialog/dialog.example';
-import GridExample from './lib/grid/grid.example';
+/* import GridExample from './lib/grid/grid.example';
 import FormExample from './lib/form/form.example';
-import LayoutExample from './lib/layout/layout.example';
+import LayoutExample from './lib/layout/layout.example'; */
 /* import {Layout, Header, Aside, Content, Footer} from './lib/layout/layout'; */
 /* import './example.scss'; */
 import IconDemo from './lib/icon/icon.demo';
@@ -13,6 +13,7 @@ import modalExample from './lib/modal/modal.example';
 import { GlobalStyle, IndexBody, Header, HeaderLogo, HeaderButton, HeaderIcon, HeaderIconBtn, Container, Nav, Main, NavA, NavDiv, NavLink } from './style-component';
 import GithubLogo from './lib/icon/icons/github';
 import CheckBoxExample from './lib/checkbox/checkbox.example';
+import RadioExample from './lib/radio/radio.example';
 const logo =  require('./pz-logos.jpeg');
 
 ReactDOM.render((
@@ -74,6 +75,9 @@ ReactDOM.render((
                                 <li>
                                     <NavLink to='/checkbox'>多选按钮</NavLink>
                                 </li>
+                                <li>
+                                    <NavLink to='/radio'>单选按钮</NavLink>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -83,11 +87,12 @@ ReactDOM.render((
                     <Route path="/button" component={ButtonExample}></Route>
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>
-                    <Route path="/grid" component={GridExample}></Route>
+                   {/*  <Route path="/grid" component={GridExample}></Route>
                     <Route path='/form' component={FormExample}></Route>
-                    <Route path='/layout' component={LayoutExample}></Route>
+                    <Route path='/layout' component={LayoutExample}></Route> */}
                     <Route path='/modal' component={modalExample}></Route>
                     <Route path='/checkbox' component={CheckBoxExample}></Route>
+                    <Route path='/radio' component={RadioExample}></Route>
                 </Main>
             </Container>
         </IndexBody>

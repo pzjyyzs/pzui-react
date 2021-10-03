@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { CheckboxProps, LabelPlace } from "./types";
+import { CheckboxProps } from "./types";
 
 export const Root = styled.label`
     display: flex;
-    flex-direction: ${ (props: CheckboxProps) => (props.labelPlace === LabelPlace.top || 
-        props.labelPlace === LabelPlace.bottom) ? 'column' : 'row'};
-    align-items: ${ (props: CheckboxProps) => (props.labelPlace === LabelPlace.top || 
-        props.labelPlace === LabelPlace.bottom) ? 'center' : 'flex-start'};
+    flex-direction: ${ (props: CheckboxProps) => (props.labelPlace === 'top' || 
+        props.labelPlace === 'bottom') ? 'column' : 'row'};
+    align-items: ${ (props: CheckboxProps) => (props.labelPlace === 'top' || 
+        props.labelPlace === 'bottom') ? 'center' : 'flex-start'};
     cursor: ${ (props: CheckboxProps) => props.disabled ? 'not-allowed' : 'pointer' };
     user-select: none;
 `;
@@ -68,8 +68,7 @@ export const Input = styled.input`
 
 export const Label =  styled.label<CheckboxProps>(props => {
     const { labelPlace, disabled } = props;
-    console.log(labelPlace)
-    const paddingDirection = {  [LabelPlace.top]: 'Bottom', [LabelPlace.bottom]: 'Top', [LabelPlace.left]: 'Right', [LabelPlace.right]: 'Left'};
+    const paddingDirection = {  'top': 'Bottom', 'bottom': 'Top', 'left': 'Right', 'right': 'Left'};
     const color = disabled ? '#545454' : '#000';
     return {
         verticalAlign: 'middle',
