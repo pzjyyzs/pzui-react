@@ -4,7 +4,7 @@ import Content from './content';
 import Footer from './footer';
 import Header from './hearder';
 import Layout from './layout';
-import './layout.example.scss';
+/* import './layout.example.scss'; */
 
 const LayoutExample:React.FunctionComponent = () => {
     return (

@@ -1,17 +1,22 @@
-import classes from '../helpers/classes';
-import React, { InputHTMLAttributes } from 'react';
-import './input.scss';
+import React from 'react';
+import { BaseInput, Root } from './style.component';
+import { InputProps } from './types';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
-}
 const Input: React.FunctionComponent<InputProps> = (props) => {
-    const { className, ...rest} = props
+    const { ...rest} = props
     return (
-        <input 
-        className={classes('pzui-input', className)}
-        {...rest}></input>
+        <Root {...rest}>
+            <BaseInput 
+            {...rest}></BaseInput>
+        </Root>
     )
+}
+
+Input.defaultProps = {
+    disabled: false,
+    type: 'text',
+    value: '',
 }
 
 export default Input;
